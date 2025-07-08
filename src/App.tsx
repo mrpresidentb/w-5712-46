@@ -18,6 +18,7 @@ import WebHosting from "./pages/WebHosting";
 import Pricing from "./pages/Pricing";
 import TermsOfService from "./pages/TermsOfService";
 import FAQ from "./pages/FAQ";
+import Services from "./pages/Services";
 import BlogAdmin from "./pages/admin/BlogAdmin";
 
 const App = () => {
@@ -42,6 +43,7 @@ const App = () => {
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<TermsOfService />} />
             <Route path="/faq" element={<FAQ />} />
+            <Route path="/services" element={<Services />} />
             <Route path="/blog" element={<BlogListing />} />
             <Route path="/blog/:slug" element={<BlogPostDetail />} />
             <Route path="/services/home-office" element={<HomeOfficeSupport />} />
