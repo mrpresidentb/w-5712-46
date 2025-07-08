@@ -76,8 +76,14 @@ const Navbar = () => {
                   <NavigationMenuTrigger className={cn(isScrolled ? "text-gray-700 hover:text-blue-900" : "text-gray-100 hover:text-white bg-transparent hover:bg-blue-800")}>
                     Services
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent>
+                   <NavigationMenuContent>
                     <ul className="grid gap-3 p-4 w-[400px]">
+                      <li>
+                        <Link to="/services" className="block p-3 space-y-1 rounded-md hover:bg-gray-100 border-b border-gray-200">
+                          <div className="font-medium text-blue-900">All IT Services</div>
+                          <p className="text-sm text-gray-500">Complete overview of our technology solutions</p>
+                        </Link>
+                      </li>
                       <li>
                         <Link to="/services/home-office" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
                           <div className="font-medium">Home & Home-Office Support</div>
@@ -179,6 +185,11 @@ const Navbar = () => {
             </button>
             
             <div className="hidden ml-4 mt-1 space-y-1">
+              <Link to="/services" className={cn("block px-3 py-2 rounded-md border-b border-gray-400", isScrolled ? "text-gray-700 hover:bg-gray-50" : "text-gray-200 hover:bg-blue-800")} onClick={() => {
+                setIsMenuOpen(false);
+              }}>
+                All IT Services
+              </Link>
               <Link to="/services/home-office" className={cn("block px-3 py-2 rounded-md", isScrolled ? "text-gray-700 hover:bg-gray-50" : "text-gray-200 hover:bg-blue-800")} onClick={() => {
                 setIsMenuOpen(false);
               }}>

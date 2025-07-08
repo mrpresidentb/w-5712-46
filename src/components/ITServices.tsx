@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { Monitor, Shield, Wifi, Printer, Globe, Users, Home, Building, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from 'react-router-dom';
 
 const ITServices = () => {
   const [hoveredService, setHoveredService] = useState<number | null>(null);
@@ -94,22 +95,31 @@ const ITServices = () => {
           ))}
         </div>
         
-        <div className="mt-12 text-center">
+        <div className="mt-12 text-center space-y-4">
           <p className="text-gray-700 font-medium mb-4">
             Looking for a customized IT solution for your home or business?
           </p>
-          <button 
-            onClick={() => {
-              const contactSection = document.getElementById('contact');
-              if (contactSection) {
-                contactSection.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}
-            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-all duration-300"
-          >
-            Get a Free Consultation
-            <ArrowRight className="ml-2 w-4 h-4" />
-          </button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link 
+              to="/services"
+              className="inline-flex items-center px-6 py-3 bg-blue-100 text-blue-700 rounded-md hover:bg-blue-200 transition-all duration-300 font-semibold"
+            >
+              View All Services
+              <ArrowRight className="ml-2 w-4 h-4" />
+            </Link>
+            <button 
+              onClick={() => {
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-all duration-300"
+            >
+              Get a Free Consultation
+              <ArrowRight className="ml-2 w-4 h-4" />
+            </button>
+          </div>
         </div>
       </div>
     </section>

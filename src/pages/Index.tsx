@@ -62,13 +62,21 @@ const Index = () => {
             </div>
           </div>
           
-          <div className="text-center">
-            <Link 
-              to="/faq" 
-              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
-            >
-              View All Frequently Asked Questions
-            </Link>
+          <div className="text-center space-y-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link 
+                to="/services" 
+                className="inline-flex items-center px-6 py-3 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-colors font-semibold"
+              >
+                View All Our Services
+              </Link>
+              <Link 
+                to="/faq" 
+                className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+              >
+                View All Frequently Asked Questions
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -120,13 +128,21 @@ const Index = () => {
             </div>
           </div>
           
-          <div className="text-center">
-            <Link 
-              to="/faq" 
-              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
-            >
-              View All Frequently Asked Questions
-            </Link>
+          <div className="text-center space-y-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link 
+                to="/services" 
+                className="inline-flex items-center px-6 py-3 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-colors font-semibold"
+              >
+                View All Our Services
+              </Link>
+              <Link 
+                to="/faq" 
+                className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+              >
+                View All Frequently Asked Questions
+              </Link>
+            </div>
           </div>
         </div>
       </section>
