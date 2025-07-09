@@ -30,6 +30,7 @@ const categories = [
   'Home Office',
   'Printer Support',
   'Cybersecurity',
+  'New Technologies',
   'Web Development',
   'Business Support'
 ];

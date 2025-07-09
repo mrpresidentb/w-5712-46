@@ -31,5 +31,11 @@ export const blogCategories: BlogCategory[] = [
     name: 'Cybersecurity',
     description: 'Security best practices and protection strategies for businesses and individuals',
     slug: 'cybersecurity'
+  },
+  {
+    id: '6',
+    name: 'New Technologies',
+    description: 'Latest technology trends, emerging tools, and innovative solutions',
+    slug: 'new-technologies'
   }
 ];
