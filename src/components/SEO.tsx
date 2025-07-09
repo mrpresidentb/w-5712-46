@@ -43,12 +43,14 @@ const SEO: React.FC<SEOProps> = ({
   name = 'IT Carolina',
   imageUrl = '/og.jpg',
   canonical,
-  keywords = "computer repair near me, computer repair technician near me, computer repair charlotte nc, IT support near me, computer service near me, computer help near me, pc help near me, apple computer support, dell computer support, computer repair shops near me, personal computer repair service, computer support services near me",
+  keywords,
   faqData,
   howToData,
   publishedTime,
   modifiedTime
 }) => {
+  // Use provided keywords or default ones
+  const finalKeywords = keywords || "computer repair near me, computer repair technician near me, computer repair charlotte nc, IT support near me, computer service near me, computer help near me, pc help near me, apple computer support, dell computer support, computer repair shops near me, personal computer repair service, computer support services near me";
   const location = useLocation();
   const currentUrl = canonical || `https://itcarolina.us${location.pathname}`;
   const absoluteImageUrl = imageUrl.startsWith('http') ? imageUrl : `https://itcarolina.us${imageUrl}`;
@@ -210,7 +212,7 @@ const SEO: React.FC<SEOProps> = ({
       
       {/* Standard meta tags */}
       <meta name="description" content={description} />
-      <meta name="keywords" content={keywords} />
+      <meta name="keywords" content={finalKeywords} />
       <meta name="robots" content="index, follow" />
       <meta name="googlebot" content="index, follow" />
       <link rel="canonical" href={currentUrl} />

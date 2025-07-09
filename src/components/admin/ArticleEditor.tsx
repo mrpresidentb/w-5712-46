@@ -86,28 +86,8 @@ const ArticleEditor: React.FC<ArticleEditorProps> = ({
         twitter_description: article.twitter_description || '',
         twitter_image: article.twitter_image || ''
       });
-    } else {
-      // Auto-generate SEO data for new articles when title changes
-      if (formData.title && !article) {
-        const defaultTitle = `${formData.title} | IT Carolina - Charlotte NC Computer Repair`;
-        const defaultDescription = formData.excerpt || 'Professional IT support for home and small business in Charlotte, NC';
-        const defaultImage = formData.image_url || 'https://itcarolina.us/og.jpg';
-        
-        setFormData(prev => ({
-          ...prev,
-          custom_title: prev.custom_title || defaultTitle,
-          custom_description: prev.custom_description || defaultDescription,
-          custom_keywords: prev.custom_keywords || `computer repair charlotte nc, IT support charlotte, ${prev.category?.toLowerCase() || 'IT services'}, charlotte computer help`,
-          og_title: prev.og_title || defaultTitle,
-          og_description: prev.og_description || defaultDescription,
-          og_image: prev.og_image || defaultImage,
-          twitter_title: prev.twitter_title || formData.title,
-          twitter_description: prev.twitter_description || defaultDescription,
-          twitter_image: prev.twitter_image || defaultImage
-        }));
-      }
     }
-  }, [article, formData.title, formData.excerpt, formData.category, formData.image_url]);
+  }, [article]);
 
   const generateSlug = (title: string) => {
     return title
