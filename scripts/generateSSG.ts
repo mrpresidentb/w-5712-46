@@ -57,7 +57,7 @@ function generateStaticHTML(post: BlogPost): string {
   // Use custom meta data or generate defaults
   const title = post.og_title || post.custom_title || `${post.title} | IT Carolina - Charlotte NC Computer Repair`;
   const description = post.og_description || post.custom_description || post.excerpt || 'Professional IT support for home and small business in Charlotte, NC';
-  const image = post.og_image || (post.image_url ? `${baseUrl}${post.image_url}` : `${baseUrl}/og.jpg`);
+  const image = post.og_image || (post.image_url ? (post.image_url.startsWith('http') ? post.image_url : `${baseUrl}${post.image_url}`) : `${baseUrl}/og.jpg`);
   const keywords = post.custom_keywords || 'computer repair charlotte nc, IT support charlotte nc, computer help charlotte';
 
   return `<!DOCTYPE html>
