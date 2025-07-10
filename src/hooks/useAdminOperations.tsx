@@ -11,10 +11,20 @@ export const useAdminOperations = () => {
       console.log('[useAdminOperations] Starting update for post:', id);
       console.log('[useAdminOperations] Updates:', updates);
 
-      // Convert ContentSection[] to Json for Supabase
+      // Convert ContentSection[] to Json for Supabase and include all SEO fields
       const supabaseUpdates = {
         ...updates,
-        content: updates.content ? JSON.parse(JSON.stringify(updates.content)) : undefined
+        content: updates.content ? JSON.parse(JSON.stringify(updates.content)) : undefined,
+        // Ensure all SEO fields are included (null values will be handled by COALESCE in SQL)
+        custom_title: updates.custom_title || null,
+        custom_description: updates.custom_description || null,
+        custom_keywords: updates.custom_keywords || null,
+        og_title: updates.og_title || null,
+        og_description: updates.og_description || null,
+        og_image: updates.og_image || null,
+        twitter_title: updates.twitter_title || null,
+        twitter_description: updates.twitter_description || null,
+        twitter_image: updates.twitter_image || null
       };
 
       // Use RPC function to bypass RLS for admin operations
@@ -43,7 +53,7 @@ export const useAdminOperations = () => {
     try {
       console.log('[useAdminOperations] Creating new post:', postData);
 
-      // Convert ContentSection[] to Json for Supabase
+      // Convert ContentSection[] to Json for Supabase and include all SEO fields
       const supabasePostData = {
         title: postData.title!,
         slug: postData.slug!,
@@ -53,7 +63,17 @@ export const useAdminOperations = () => {
         author: postData.author || 'IT Carolina Team',
         image_url: postData.image_url || null,
         published: postData.published ?? true,
-        date: postData.date || new Date().toISOString().split('T')[0]
+        date: postData.date || new Date().toISOString().split('T')[0],
+        // Include all SEO fields
+        custom_title: postData.custom_title || null,
+        custom_description: postData.custom_description || null,
+        custom_keywords: postData.custom_keywords || null,
+        og_title: postData.og_title || null,
+        og_description: postData.og_description || null,
+        og_image: postData.og_image || null,
+        twitter_title: postData.twitter_title || null,
+        twitter_description: postData.twitter_description || null,
+        twitter_image: postData.twitter_image || null
       };
 
       // Use RPC function to create blog post
