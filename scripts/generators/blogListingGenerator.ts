@@ -1,5 +1,5 @@
 import { BlogPost } from '../types.js';
-import { escapeHtml } from '../types.js';
+import { escapeHtml } from '../utils.js';
 import { generateNavigation, generateFooter } from './contentGenerator.js';
 
 export function generateBlogListingHTML(posts: BlogPost[], baseHTML: string): string {

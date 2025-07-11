@@ -1,4 +1,4 @@
-import { escapeHtml } from '../types.js';
+import { escapeHtml } from '../utils.js';
 
 export function generatePostContent(content: any[]): string {
   return content.map(section => {

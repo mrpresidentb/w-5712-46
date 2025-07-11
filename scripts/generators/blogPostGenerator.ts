@@ -1,5 +1,5 @@
 import { BlogPost } from '../types.js';
-import { escapeHtml, calculateReadingTime } from '../types.js';
+import { escapeHtml, calculateReadingTime } from '../utils.js';
 import { generatePostContent, generateNavigation, generateFooter } from './contentGenerator.js';
 
 export function generateBlogPostHTML(post: BlogPost, baseHTML: string): string {
