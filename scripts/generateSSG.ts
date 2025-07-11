@@ -137,9 +137,9 @@ function generateStaticHTML(post: BlogPost): string {
 
   <!-- Redirect to SPA for functionality -->
   <script>
-    // Redirect to the SPA after meta tags are loaded (without hash)
+    // Redirect to the SPA after meta tags are loaded (with hash routing)
     setTimeout(function() {
-      window.location.href = '/blog/${post.slug}';
+      window.location.href = '/#/blog/${post.slug}';
     }, 100);
   </script>
 </head>
