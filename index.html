@@ -2,15 +2,26 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-TZ8DHWCH');</script>
-    <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Performance optimizations -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+    
+    <!-- Critical CSS for font loading -->
+    <style>
+      /* Inline critical CSS for Space Grotesk font */
+      @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+      .font-space {
+        font-family: 'Space Grotesk', sans-serif;
+        font-display: swap;
+      }
+      /* Critical above-the-fold styles */
+      body { font-family: 'Space Grotesk', sans-serif; margin: 0; padding: 0; }
+      .navbar-fixed { position: fixed; top: 0; left: 0; right: 0; z-index: 50; }
+    </style>
     
     <!-- Favicon optimized -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -25,6 +36,14 @@
     <meta name="description" content="IT Carolina offers expert IT support, computer repair, home office tech help, small business networking, web design, and Microsoft 365/Google Workspace setup in Charlotte NC." />
     <meta name="author" content="IT Carolina" />
     <meta name="keywords" content="IT support Charlotte, computer repair, virus removal, network setup, web design, small business IT, home office support, Microsoft 365, Google Workspace, printer support, data recovery" />
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TZ8DHWCH');</script>
+    <!-- End Google Tag Manager -->
     
     <!-- Meta tags including Open Graph are handled dynamically by SEO component and positioned early for social media crawlers -->
     <!-- Critical: OG tags appear within first 50KB for Facebook scanning -->

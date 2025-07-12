@@ -148,7 +148,13 @@ const Navbar = () => {
           
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <button onClick={toggleMenu} className={cn("focus:outline-none", isScrolled ? "text-blue-900" : "text-white")}>
+            <button 
+              onClick={toggleMenu} 
+              className={cn("focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 rounded-md p-2", isScrolled ? "text-blue-900" : "text-white")}
+              aria-label="Open main navigation menu"
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
+            >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
@@ -156,7 +162,12 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navigation Menu */}
-      <div className={cn("md:hidden transition-all duration-300 overflow-hidden w-full", isMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0")}>
+      <div 
+        id="mobile-menu"
+        className={cn("md:hidden transition-all duration-300 overflow-hidden w-full", isMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0")}
+        role="navigation"
+        aria-label="Mobile navigation menu"
+      >
         <div className={cn("px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-sm", isScrolled ? "bg-white" : "bg-blue-900")}>
           <Link to="/" className={cn("block px-3 py-2 rounded-md", isScrolled ? "text-gray-700 hover:bg-gray-50" : "text-gray-200 hover:bg-blue-800")} onClick={() => {
             setIsMenuOpen(false);
@@ -173,13 +184,18 @@ const Navbar = () => {
           </Link>
           
           <div className="block">
-            <button onClick={e => {
-              e.preventDefault();
-              const submenu = e.currentTarget.nextElementSibling;
-              if (submenu) {
-                submenu.classList.toggle('hidden');
-              }
-            }} className={cn("flex w-full justify-between items-center px-3 py-2 rounded-md", isScrolled ? "text-gray-700 hover:bg-gray-50" : "text-gray-200 hover:bg-blue-800")}>
+            <button 
+              onClick={e => {
+                e.preventDefault();
+                const submenu = e.currentTarget.nextElementSibling;
+                if (submenu) {
+                  submenu.classList.toggle('hidden');
+                }
+              }} 
+              className={cn("flex w-full justify-between items-center px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500", isScrolled ? "text-gray-700 hover:bg-gray-50" : "text-gray-200 hover:bg-blue-800")}
+              aria-label="Toggle services submenu"
+              aria-expanded="false"
+            >
               <span>Services</span>
               <ChevronDown className="h-4 w-4" />
             </button>
