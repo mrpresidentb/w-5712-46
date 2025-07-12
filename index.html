@@ -10,17 +10,46 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="//www.googletagmanager.com" />
     
-    <!-- Critical CSS for font loading -->
+    <!-- Critical CSS for font loading and above-the-fold styles -->
     <style>
-      /* Inline critical CSS for Space Grotesk font */
-      @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
-      .font-space {
-        font-family: 'Space Grotesk', sans-serif;
+      /* Font face definition for faster loading */
+      @font-face {
+        font-family: 'Space Grotesk';
+        font-style: normal;
+        font-weight: 300 700;
+        font-display: swap;
+        src: url('https://fonts.gstatic.com/s/spacegrotesk/v15/V8mQQoyeyJGkrR0sBPsBlO7XqIe_tYJqk9TQPq9BtIGcWD-Wjw.woff2') format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      
+      /* Critical above-the-fold styles */
+      body { 
+        font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; 
+        margin: 0; 
+        padding: 0; 
         font-display: swap;
       }
-      /* Critical above-the-fold styles */
-      body { font-family: 'Space Grotesk', sans-serif; margin: 0; padding: 0; }
       .navbar-fixed { position: fixed; top: 0; left: 0; right: 0; z-index: 50; }
+      
+      /* Loading spinner for lazy loading */
+      .loading-spinner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+      }
+      .spinner {
+        width: 32px;
+        height: 32px;
+        border: 2px solid #f3f3f3;
+        border-top: 2px solid #3498db;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
     </style>
     
     <!-- Favicon optimized -->

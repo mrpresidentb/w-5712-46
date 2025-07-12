@@ -133,4 +133,7 @@ export default {
                 require("tailwindcss-animate"),
                 require("@tailwindcss/typography")
         ],
+        experimental: {
+                optimizeUniversalDefaults: true,
+        },
 } satisfies Config;
