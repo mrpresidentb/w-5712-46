@@ -119,3 +119,83 @@
         </div>
     </div>
 </nav>
+
+<script>
+// Navigation functionality
+function scrollToContact() {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    
+    if (mobileMenu && menuBtn) {
+        mobileMenu.classList.toggle('active');
+        menuBtn.classList.toggle('active');
+        
+        // Prevent body scroll when mobile menu is open
+        if (mobileMenu.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    }
+}
+
+function toggleMobileDropdown() {
+    const dropdown = document.getElementById('mobile-dropdown');
+    const trigger = document.querySelector('.mobile-dropdown-trigger');
+    
+    if (dropdown && trigger) {
+        dropdown.classList.toggle('active');
+        trigger.classList.toggle('active');
+    }
+}
+
+// Handle navbar scroll effects
+window.addEventListener('scroll', function() {
+    const navbar = document.getElementById('navbar');
+    if (navbar) {
+        if (window.scrollY > 10) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    }
+});
+
+// Handle desktop dropdown menus
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdownTrigger = document.querySelector('.dropdown-trigger');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+    
+    if (dropdownTrigger && dropdownMenu) {
+        dropdownTrigger.addEventListener('mouseenter', function() {
+            dropdownMenu.style.display = 'block';
+            setTimeout(() => dropdownMenu.classList.add('active'), 10);
+        });
+        
+        dropdownTrigger.parentElement.addEventListener('mouseleave', function() {
+            dropdownMenu.classList.remove('active');
+            setTimeout(() => dropdownMenu.style.display = 'none', 200);
+        });
+    }
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        
+        if (mobileMenu && menuBtn && 
+            !mobileMenu.contains(e.target) && 
+            !menuBtn.contains(e.target) && 
+            mobileMenu.classList.contains('active')) {
+            toggleMobileMenu();
+        }
+    });
+});
+</script>
